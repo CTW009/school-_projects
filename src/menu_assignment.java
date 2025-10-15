@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class menu_assignment {
     public static void main (String[] args){
         //some vars to init them as globals
-        int user_choice_main=-1;
-        int user_choice_side=-1;
-        int user_choice_drink=-1;
-        int user_choice_desert=-1;
-        String L_S="";
+        int user_choice_main;
+        int user_choice_side;
+        int user_choice_drink;
+        int user_choice_desert;
+        String L_S;
         //main menu
         Scanner scanner = new Scanner(System.in);
 
@@ -174,10 +174,6 @@ public class menu_assignment {
                             return 3;
                         case "4":
                             return 4;
-                        //case "5":
-                            //return 5;
-                        //case "6":
-                            //return 6;
                         default:
                             System.out.println("please enter a valid number!");
 
