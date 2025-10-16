@@ -1,7 +1,14 @@
 import java.util.Scanner;
+
+  /// @menu_assignemt
+  ///
+  /// @author conner Watson
+  ///
+
 //to do list
 //idk... tltd
-//NOT DONE I NEED TO ADD LARGE AND SMALL OPTIONS FOR MAIN MUNU DONT FORGET!!!!!
+//NOT DONE I NEED TO ADD LARGE AND SMALL OPTIONS FOR MAIN NU DONT FORGET!!!!! done!
+//now time to do some documentation!
 public class menu_assignment {
     public static void main (String[] args){
         //some vars to init them as globals
@@ -9,10 +16,9 @@ public class menu_assignment {
         int user_choice_side;
         int user_choice_drink;
         int user_choice_desert;
+        Scanner scanner = new Scanner(System.in);
         String L_S;
         //main menu
-        Scanner scanner = new Scanner(System.in);
-
         System.out.println("     welcome this is what we serve at narnia!");
         menu_gen("",0,0,false,0,true,true,"main");
         menu_gen("Burger",10,15,true,1,true,false,"");
@@ -20,7 +26,7 @@ public class menu_assignment {
         menu_gen("a tree",100,500,true,3,true,false,"");
         menu_gen("hotdog",1,3,true,4,true,false,"");
         System.out.println("please enter one of the following numbers! ");
-        //logic
+        //logic for main menu
 
 
         while (true){
@@ -51,7 +57,7 @@ public class menu_assignment {
         menu_gen("bushes ",50,0,true,3,false,false,"");
         menu_gen("fries  ",7,0,true,4,false,false,"");
 
-
+        //logic for side menu
         while (true) {
             user_choice_side = num_user_in();
             System.out.println("this is what you would like to choose?: y|n: ");
@@ -64,13 +70,13 @@ public class menu_assignment {
 
         }
 
-
+        //drink menu
         menu_gen("",0,0,false,0,false,true," drink");
         menu_gen("no drink",0,0,true,1,false,false,"");
         menu_gen("sprite  ",5,0,true,2,false,false,"");
         menu_gen("water   ",50,0,true,3,false,false,"");
         menu_gen("coke    ",4,0,true,4,false,false,"");
-
+        //logic for drink menu
         while (true) {
             user_choice_drink = num_user_in();
             System.out.println("this is what you would like to choose?: y|n: ");
@@ -82,14 +88,14 @@ public class menu_assignment {
 
 
         }
-
+        //desert menu
         menu_gen("",0,0,false,0,false,true," desert");
         menu_gen("no desert",0,0,true,1,false,false,"");
         menu_gen("cake     ",5,0,true,2,false,false,"");
         menu_gen("ice cream",12,0,true,3,false,false,"");
         menu_gen("float    ",15,0,true,4,false,false,"");
 
-
+        //logic for desert menu
         while (true) {
             user_choice_desert = num_user_in();
             System.out.println("this is what you would like to choose?: y|n: ");
@@ -111,7 +117,7 @@ public class menu_assignment {
 
 
 
-    //generates the menu look
+    //generates the menu look using fstrings takes in bool vals so i can call each indivudl line for diff perpouses
     public static void menu_gen(String name, int price_s,int price_L, boolean nex_line, int item_num,boolean main,boolean title, String title_name){
 
         if (title) {
@@ -140,7 +146,7 @@ public class menu_assignment {
     }
       }
 
-
+    //asks user a yes or no question
     public static boolean user_in(){
         Scanner user=new Scanner(System.in);
         while (true){
@@ -156,7 +162,7 @@ public class menu_assignment {
         }
 
     }
-
+    //asks the user to  input a number between 1-4 checks if it is valid to.
     public static int num_user_in(){
 
         Scanner user_in= new Scanner(System.in);
@@ -182,7 +188,7 @@ public class menu_assignment {
         }
 
     }
-
+    //calculates the final prices just a hole lot of switch statemtns
     public static int calculation(int option_1,int option_2,int option_3, int option_4,String small_larger){
         int main_sum=-1;
         int side_sum=-1;
